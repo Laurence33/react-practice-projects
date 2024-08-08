@@ -2,6 +2,7 @@ import { useState } from 'react';
 import NewPost from './NewPost';
 import Post from './Post';
 import classes from './PostList.module.css';
+import Modal from './Modal';
 
 const posts = [
   {
@@ -16,19 +17,26 @@ const posts = [
 function PostList() {
   const [body, setBody] = useState('');
   const [author, setAuthor] = useState('');
+  const [isModalOpen, setIsModalOpen] = useState(false);
   function changeBodyHandler(event) {
     setBody(event.target.value);
   }
   function changeAuthorHandler(event) {
     setAuthor(event.target.value);
   }
+  function toggleModal() {
+    setIsModalOpen((prev) => !prev);
+  }
   return (
     <>
-      <NewPost
-        body={body}
-        onAuthorChange={changeAuthorHandler}
-        onBodyChange={changeBodyHandler}
-      />
+      <Modal isOpen={isModalOpen} closeModal={toggleModal}>
+        <NewPost
+          body={body}
+          onAuthorChange={changeAuthorHandler}
+          onBodyChange={changeBodyHandler}
+        />
+      </Modal>
+      <button onClick={toggleModal}>Add New</button>
       <ul className={classes.posts}>
         <Post author={author} text={body} />
         {posts.map((p, i) => (
