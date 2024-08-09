@@ -14,19 +14,17 @@ const posts = [
     text: 'Testing only!',
   },
 ];
-function PostList() {
+function PostList({ isModalOpen, toggleModal }) {
   const [body, setBody] = useState('');
   const [author, setAuthor] = useState('');
-  const [isModalOpen, setIsModalOpen] = useState(false);
+
   function changeBodyHandler(event) {
     setBody(event.target.value);
   }
   function changeAuthorHandler(event) {
     setAuthor(event.target.value);
   }
-  function toggleModal() {
-    setIsModalOpen((prev) => !prev);
-  }
+
   return (
     <>
       <Modal isOpen={isModalOpen} closeModal={toggleModal}>
@@ -36,7 +34,6 @@ function PostList() {
           onBodyChange={changeBodyHandler}
         />
       </Modal>
-      <button onClick={toggleModal}>Add New</button>
       <ul className={classes.posts}>
         <Post author={author} text={body} />
         {posts.map((p, i) => (
