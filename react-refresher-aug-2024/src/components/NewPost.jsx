@@ -1,6 +1,6 @@
 import classes from './NewPost.module.css';
 
-function NewPost({ author, onAuthorChange, onBodyChange, body }) {
+function NewPost({ author, onAuthorChange, onBodyChange, body, onCancel }) {
   return (
     <form className={classes.form}>
       <p>
@@ -22,6 +22,13 @@ function NewPost({ author, onAuthorChange, onBodyChange, body }) {
           value={author}
           onChange={onAuthorChange}
         />
+      </p>
+
+      <p className={classes.actions}>
+        <button type="button" onClick={onCancel}>
+          Cancel
+        </button>
+        <button>Submit</button>
       </p>
     </form>
   );

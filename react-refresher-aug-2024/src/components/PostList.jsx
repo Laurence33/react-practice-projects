@@ -32,6 +32,7 @@ function PostList({ isModalOpen, toggleModal }) {
           body={body}
           onAuthorChange={changeAuthorHandler}
           onBodyChange={changeBodyHandler}
+          onCancel={toggleModal}
         />
       </Modal>
       <ul className={classes.posts}>
