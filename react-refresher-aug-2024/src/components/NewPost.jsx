@@ -1,15 +1,36 @@
 import classes from './NewPost.module.css';
+import { useState } from 'react';
 
-function NewPost({ author, onAuthorChange, onBodyChange, body, onCancel }) {
+function NewPost({ onCancel }) {
+  const [body, setBody] = useState('');
+  const [author, setAuthor] = useState('');
+
+  function changeBodyHandler(event) {
+    setBody(event.target.value);
+  }
+  function changeAuthorHandler(event) {
+    setAuthor(event.target.value);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    const data = {
+      body,
+      author,
+    };
+    console.log(data);
+    onCancel();
+  }
+
   return (
-    <form className={classes.form}>
+    <form className={classes.form} onSubmit={handleSubmit}>
       <p>
         <label htmlFor="body">Text</label>
         <textarea
           id="body"
           required
           rows={3}
-          onChange={onBodyChange}
+          onChange={changeBodyHandler}
           value={body}
         ></textarea>
       </p>
@@ -20,7 +41,7 @@ function NewPost({ author, onAuthorChange, onBodyChange, body, onCancel }) {
           id="name"
           required
           value={author}
-          onChange={onAuthorChange}
+          onChange={changeAuthorHandler}
         />
       </p>
 

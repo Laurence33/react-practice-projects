@@ -15,28 +15,12 @@ const posts = [
   },
 ];
 function PostList({ isModalOpen, toggleModal }) {
-  const [body, setBody] = useState('');
-  const [author, setAuthor] = useState('');
-
-  function changeBodyHandler(event) {
-    setBody(event.target.value);
-  }
-  function changeAuthorHandler(event) {
-    setAuthor(event.target.value);
-  }
-
   return (
     <>
       <Modal isOpen={isModalOpen} closeModal={toggleModal}>
-        <NewPost
-          body={body}
-          onAuthorChange={changeAuthorHandler}
-          onBodyChange={changeBodyHandler}
-          onCancel={toggleModal}
-        />
+        <NewPost onCancel={toggleModal} />
       </Modal>
       <ul className={classes.posts}>
-        <Post author={author} text={body} />
         {posts.map((p, i) => (
           <Post key={i} author={p.author} text={p.text} />
         ))}
