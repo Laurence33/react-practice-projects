@@ -17,10 +17,13 @@ export const PaginationTable = () => {
     canPreviousPage,
     prepareRow,
     pageOptions,
+    gotoPage,
+    pageCount,
     state: { pageIndex }
   } = useTable({
     columns,
     data,
+    initialState: { pageIndex: 0 }
   }, usePagination)
 
   return (
@@ -70,8 +73,18 @@ export const PaginationTable = () => {
           Page{' '}
           <strong>{pageIndex + 1} of {pageOptions.length}</strong>
         </span>{' '}
+        <span>| Goto Page:
+          <input type='number' defaultValue={pageIndex + 1} onChange={(e) => {
+            const newPage = e.target.value ? Number(e.target.value) - 1 : 0;
+            gotoPage(newPage);
+          }}
+            style={{ width: '50px' }}
+          ></input>
+        </span>
+        <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>{'<<'}</button>
         <button onClick={() => previousPage()} disabled={!canPreviousPage}>Previous</button>
         <button onClick={() => nextPage()} disabled={!canNextPage}>Next</button>
+        <button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>{'>>'}</button>
       </div>
     </>
 
