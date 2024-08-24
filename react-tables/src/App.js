@@ -1,10 +1,10 @@
 import './App.css';
-import { PaginationTable } from './components/PaginationTable';
+import { RowSelectionTable } from './components/RowSelection';
 
 function App() {
   return (
     <div className="App">
-      <PaginationTable />
+      <RowSelectionTable />
     </div>
   );
 }
