@@ -1,10 +1,10 @@
 import './App.css';
-import { ColumnHidingTable } from './components/ColumnHiding';
+import { StickyTable } from './components/StickyTable';
 
 function App() {
   return (
     <div className="App">
-      <ColumnHidingTable />
+      <StickyTable />
     </div>
   );
 }
