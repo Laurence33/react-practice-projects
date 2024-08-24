@@ -1,10 +1,10 @@
 import './App.css';
-import { ColumnOrderTable } from './components/ColumnOrder';
+import { ColumnHidingTable } from './components/ColumnHiding';
 
 function App() {
   return (
     <div className="App">
-      <ColumnOrderTable />
+      <ColumnHidingTable />
     </div>
   );
 }
