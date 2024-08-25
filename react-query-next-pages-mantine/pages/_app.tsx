@@ -3,8 +3,11 @@ import type { AppProps } from 'next/app';
 import Link from 'next/link';
 import Head from 'next/head';
 import { MantineProvider } from '@mantine/core';
+import { QueryClientProvider, QueryClient } from 'react-query';
 import { theme } from '../theme';
 import './styles.css';
+
+const queryClient = new QueryClient();
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -30,7 +33,10 @@ export default function App({ Component, pageProps }: AppProps) {
           </li>
         </ul>
       </nav>
-      <Component {...pageProps} />
+
+      <QueryClientProvider client={queryClient}>
+        <Component {...pageProps} />
+      </QueryClientProvider>
     </MantineProvider>
   );
 }
