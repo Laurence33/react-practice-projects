@@ -1,12 +1,13 @@
 import axios from 'axios';
 import { useQuery } from 'react-query';
 
-const fetchSuperHeroes = () => axios.get('http://localhost:4000/superheroes');
+const fetchSuperHeroes = () => axios.get('http://localhost:4000/superheroe');
 function index() {
-  const { isLoading, data } = useQuery('super-heroes', fetchSuperHeroes);
+  const { isLoading, data, isError, error } = useQuery('super-heroes', fetchSuperHeroes);
 
   if (isLoading) return <h2>Loading...</h2>;
 
+  if (isError) return <h2>Error: {error.message}</h2>;
   return (
     <>
       <h2>RQ Super Heroes</h2>
