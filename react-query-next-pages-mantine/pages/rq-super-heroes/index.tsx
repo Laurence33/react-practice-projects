@@ -8,7 +8,9 @@ function index() {
     fetchSuperHeroes,
     {
       // cacheTime: 3000, // in milliseconds // default 5mins
-      staleTime: 30000, // in milliseconds // default 0
+      // staleTime: 30000, // in milliseconds // default 0
+      refetchOnMount: true, // default true, other: false | 'always'
+      refetchOnWindowFocus: true, // default true, other: false | 'always'
     }
   );
 
