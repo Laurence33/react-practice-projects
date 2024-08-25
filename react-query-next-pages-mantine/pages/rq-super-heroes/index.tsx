@@ -3,7 +3,13 @@ import { useQuery } from 'react-query';
 
 const fetchSuperHeroes = () => axios.get('http://localhost:4000/superheroes');
 function index() {
-  const { isLoading, data, isError, error } = useQuery('super-heroes', fetchSuperHeroes);
+  const { isLoading, isFetching, data, isError, error } = useQuery(
+    'super-heroes',
+    fetchSuperHeroes,
+    {
+      cacheTime: 5000, // in milliseconds
+    }
+  );
 
   if (isLoading) return <h2>Loading...</h2>;
 
