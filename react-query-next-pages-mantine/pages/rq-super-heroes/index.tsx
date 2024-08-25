@@ -7,7 +7,8 @@ function index() {
     'super-heroes',
     fetchSuperHeroes,
     {
-      cacheTime: 5000, // in milliseconds
+      // cacheTime: 3000, // in milliseconds // default 5mins
+      staleTime: 30000, // in milliseconds // default 0
     }
   );
 
