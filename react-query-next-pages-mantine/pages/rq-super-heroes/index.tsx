@@ -3,7 +3,7 @@ import { useQuery } from 'react-query';
 
 const fetchSuperHeroes = () => axios.get('http://localhost:4000/superheroes');
 function index() {
-  const { isLoading, isFetching, data, isError, error } = useQuery(
+  const { isLoading, isFetching, data, isError, error, refetch } = useQuery(
     'super-heroes',
     fetchSuperHeroes,
     {
@@ -20,6 +20,11 @@ function index() {
   return (
     <>
       <h2>RQ Super Heroes</h2>
+
+      <button type="button" onClick={refetch}>
+        Reload
+      </button>
+
       {data?.data.map((d: any) => <div key={d.name}>{d.name}</div>)}
     </>
   );
