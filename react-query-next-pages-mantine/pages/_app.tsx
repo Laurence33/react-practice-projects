@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Head from 'next/head';
 import { MantineProvider } from '@mantine/core';
 import { QueryClientProvider, QueryClient } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
 import { theme } from '../theme';
 import './styles.css';
 
@@ -36,6 +37,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
       <QueryClientProvider client={queryClient}>
         <Component {...pageProps} />
+        <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
       </QueryClientProvider>
     </MantineProvider>
   );

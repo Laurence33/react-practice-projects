@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useQuery } from 'react-query';
 
-const fetchSuperHeroes = () => axios.get('http://localhost:4000/superheroe');
+const fetchSuperHeroes = () => axios.get('http://localhost:4000/superheroes');
 function index() {
   const { isLoading, data, isError, error } = useQuery('super-heroes', fetchSuperHeroes);
 
