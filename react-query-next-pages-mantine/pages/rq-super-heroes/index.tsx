@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Link from 'next/link';
 import { useQuery } from 'react-query';
 
 const fetchSuperHeroes = () => axios.get('http://localhost:4000/superheroes');
@@ -25,7 +26,11 @@ function index() {
         Reload
       </button>
 
-      {data?.data.map((d: any) => <div key={d.name}>{d.name}</div>)}
+      {data?.data.map((d: any) => (
+        <div key={d.name}>
+          <Link href={`/rq-super-heroes/${d.id}`}>{d.name}</Link>
+        </div>
+      ))}
     </>
   );
 }
