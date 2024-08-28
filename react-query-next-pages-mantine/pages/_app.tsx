@@ -32,6 +32,9 @@ export default function App({ Component, pageProps }: AppProps) {
           <li>
             <Link href="/rq-super-heroes">RQ Super Heroes</Link>
           </li>
+          <li>
+            <Link href="/tanstack-table">Tanstack Table</Link>
+          </li>
         </ul>
       </nav>
 
