@@ -5,8 +5,10 @@ import Head from 'next/head';
 import { MantineProvider } from '@mantine/core';
 import { QueryClientProvider, QueryClient } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
-import { theme } from '../theme';
 import './styles.css';
+import { SWRConfig } from 'swr';
+import { theme } from '../theme';
+import { fetcher } from '@/hooks/useApi';
 
 const queryClient = new QueryClient();
 
@@ -35,11 +37,16 @@ export default function App({ Component, pageProps }: AppProps) {
           <li>
             <Link href="/tanstack-table">Tanstack Table</Link>
           </li>
+          <li>
+            <Link href="/swr">SWR</Link>
+          </li>
         </ul>
       </nav>
 
       <QueryClientProvider client={queryClient}>
-        <Component {...pageProps} />
+        <SWRConfig value={{ fetcher }}>
+          <Component {...pageProps} />
+        </SWRConfig>
         <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
       </QueryClientProvider>
     </MantineProvider>
