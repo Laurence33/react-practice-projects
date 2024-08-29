@@ -18,6 +18,8 @@ function SwrPage() {
     setEditId('');
     setColorVal('');
   }
+  if (isLoading) return <h3>Loading...</h3>;
+  if (error) return <h3>Error: {error.message}</h3>;
   return (
     <div>
       <label htmlFor="">Color: </label>
@@ -26,7 +28,6 @@ function SwrPage() {
         Save
       </button>
       <ul>
-        {isLoading && 'Loading...'}
         {data?.map((d: Color) => (
           <li>
             {d.label}
