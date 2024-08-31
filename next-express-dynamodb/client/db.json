@@ -1,0 +1,44 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "birthday": "1990-01-01",
+      "gender": "male",
+      "createdAt": "2021-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "name": "Jane Doe",
+      "email": "jane.doe@example.com",
+      "birthday": "1990-01-01",
+      "gender": "female",
+      "createdAt": "2021-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 3,
+      "name": "John Smith",
+      "email": "john.smith@example.com",
+      "birthday": "1990-01-01",
+      "gender": "male",
+      "createdAt": "2021-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 4,
+      "name": "Jane Smith",
+      "email": "jane.smith@example.com",
+      "birthday": "1990-01-01",
+      "gender": "female",
+      "createdAt": "2021-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 5,
+      "name": "Laurence Cortez",
+      "email": "laurence.cortez@example.com",
+      "birthday": "1990-01-01",
+      "gender": "male",
+      "createdAt": "2021-01-01T00:00:00.000Z"
+    }
+  ]
+}
