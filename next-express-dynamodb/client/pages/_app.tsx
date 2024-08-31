@@ -4,6 +4,9 @@ import Head from 'next/head';
 import { MantineProvider } from '@mantine/core';
 import { theme } from '../theme';
 import Navbar from '@/components/organisms/Navbar';
+import { Notifications } from '@mantine/notifications';
+import '@mantine/dates/styles.css';
+import '@mantine/notifications/styles.css';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -18,6 +21,7 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       <Navbar />
       <Component {...pageProps} />
+      <Notifications />
     </MantineProvider>
   );
 }

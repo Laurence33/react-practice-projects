@@ -1,44 +1,76 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "name": "John Doe",
       "email": "john.doe@example.com",
-      "birthday": "1990-01-01",
-      "gender": "male",
+      "birthday": "1990-01-01T00:00:00.000Z",
+      "gender": "Male",
       "createdAt": "2021-01-01T00:00:00.000Z"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Jane Doe",
       "email": "jane.doe@example.com",
-      "birthday": "1990-01-01",
-      "gender": "female",
+      "birthday": "1990-01-01T00:00:00.000Z",
+      "gender": "Female",
       "createdAt": "2021-01-01T00:00:00.000Z"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "John Smith",
       "email": "john.smith@example.com",
-      "birthday": "1990-01-01",
-      "gender": "male",
+      "birthday": "1990-01-01T00:00:00.000Z",
+      "gender": "Male",
       "createdAt": "2021-01-01T00:00:00.000Z"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Jane Smith",
       "email": "jane.smith@example.com",
-      "birthday": "1990-01-01",
-      "gender": "female",
+      "birthday": "1990-01-01T00:00:00.000Z",
+      "gender": "Female",
       "createdAt": "2021-01-01T00:00:00.000Z"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Laurence Cortez",
       "email": "laurence.cortez@example.com",
-      "birthday": "1990-01-01",
-      "gender": "male",
+      "birthday": "1990-01-01T00:00:00.000Z",
+      "gender": "Male",
       "createdAt": "2021-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "6",
+      "name": "Laurence Novio Cortez",
+      "email": "laurencecortez26.lc@gmail.com",
+      "birthday": "2000-04-17T16:00:00.000Z",
+      "gender": "Male",
+      "createdAt": "2024-08-31T04:00:55.114Z"
+    },
+    {
+      "id": "7",
+      "name": "Kenny Goodies Rogers",
+      "email": "student3@gmail.com",
+      "birthday": "2000-04-05T16:00:00.000Z",
+      "gender": "Male",
+      "createdAt": "2024-08-31T04:02:27.109Z"
+    },
+    {
+      "id": "8",
+      "name": "Dev Dev Dev",
+      "email": "laurencecortez26.lc@gmail.com",
+      "birthday": "2024-07-31T16:00:00.000Z",
+      "gender": "Male",
+      "createdAt": "2024-08-31T04:02:58.723Z"
+    },
+    {
+      "id": "9",
+      "name": "Kendi Kelly Bongo",
+      "email": "duplicate@example.com",
+      "birthday": "2024-07-31T16:00:00.000Z",
+      "gender": "Female",
+      "createdAt": "2024-08-31T07:26:40.888Z"
     }
   ]
 }
